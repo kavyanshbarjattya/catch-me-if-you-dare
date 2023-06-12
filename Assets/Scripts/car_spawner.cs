@@ -10,8 +10,10 @@ public class car_spawner : MonoBehaviour
     [SerializeField] private int xPos;
     [SerializeField] private Canvas normalcar_screen;
     [SerializeField] private Canvas powercar_screen;
+    [SerializeField] private Canvas fastcar_screen;
     [SerializeField] private TextMeshProUGUI normal_car_score;
     [SerializeField] private TextMeshProUGUI power_car_score;
+    [SerializeField] private TextMeshProUGUI fast_car_score;
 
     private int normal_scoreHolder = 0;
     private int power_scoreHolder = 0;
@@ -46,13 +48,22 @@ public class car_spawner : MonoBehaviour
                 {
                     power_scoreHolder+= 20;
                     power_car_score.text = "Power Car : " + power_scoreHolder;
-
                     Destroy(hit.transform.gameObject);
                     powercar_screen.enabled = true;
                 }
             }
 
             // This is for fast car
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.tag == "Fast Car")
+                {
+                    power_scoreHolder += 20;
+                    power_car_score.text = "Fast Car : " + power_scoreHolder;
+                    Destroy(hit.transform.gameObject);
+                    powercar_screen.enabled = true;
+                }
+            }
         }
         else if (Input.touchCount > 0)
         {
