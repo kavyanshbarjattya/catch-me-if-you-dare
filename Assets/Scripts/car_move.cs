@@ -5,15 +5,17 @@ using UnityEngine;
 public class car_move : MonoBehaviour
 {
     [SerializeField] private float acceleration;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.forward * acceleration * Time.deltaTime);
     }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Land"))
+        {
+            Debug.Log("Collision Exit");
+        }
+    }
+
 }
