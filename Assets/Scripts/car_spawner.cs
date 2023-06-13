@@ -9,19 +9,17 @@ public class car_spawner : MonoBehaviour
     [SerializeField] private float destroySpeed;
     [SerializeField] private int xPos;
     [SerializeField] private Canvas normalcar_screen;
-    [SerializeField] private Canvas powercar_screen;
     [SerializeField] private Canvas fastcar_screen;
     [SerializeField] private TextMeshProUGUI normal_car_score;
-    [SerializeField] private TextMeshProUGUI power_car_score;
     [SerializeField] private TextMeshProUGUI fast_car_score;
 
     private int normal_scoreHolder = 0;
-    private int power_scoreHolder = 0;
+    public int fast_scoreHolder = 0;
     void Start()
     {
         StartCoroutine(CarWaiter());
         normalcar_screen.enabled = false;
-        powercar_screen.enabled = false;
+        fastcar_screen.enabled = false;
     }
     private void Update()
     {
@@ -41,29 +39,20 @@ public class car_spawner : MonoBehaviour
                 }
             }
 
-            // This is for power car
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.collider.tag == "Power Car")
-                {
-                    power_scoreHolder+= 20;
-                    power_car_score.text = "Power Car : " + power_scoreHolder;
-                    Destroy(hit.transform.gameObject);
-                    powercar_screen.enabled = true;
-                }
-            }
-
             // This is for fast car
             if (Physics.Raycast(ray, out hit))
             {
                 if (hit.collider.tag == "Fast Car")
                 {
-                    power_scoreHolder += 20;
-                    power_car_score.text = "Fast Car : " + power_scoreHolder;
+                 fast_scoreHolder+= 20;
+                 fast_car_score.text = "Fast Car : " + fast_scoreHolder;
                     Destroy(hit.transform.gameObject);
-                    powercar_screen.enabled = true;
+                    fastcar_screen.enabled = true;
                 }
             }
+
+            // This is for power car
+            
         }
         else if (Input.touchCount > 0)
         {
@@ -82,7 +71,7 @@ public class car_spawner : MonoBehaviour
     {
         while (car[0])
         {
-            xPos = Random.Range(-30, 31);
+            xPos = Random.Range(-25, 30);
             GameObject carclone = Instantiate(car[Random.Range(0,2)], new Vector3(xPos ,transform.position.y,transform.position.z), Quaternion.identity);
             yield return new WaitForSeconds(2f);
             Destroy(carclone , destroySpeed);

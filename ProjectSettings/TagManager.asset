@@ -8,6 +8,7 @@ TagManager:
   - Car
   - Normal Car
   - Power Car
+  - Fast Car
   layers:
   - Default
   - TransparentFX
