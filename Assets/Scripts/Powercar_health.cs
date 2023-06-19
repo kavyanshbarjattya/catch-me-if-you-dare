@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class score_minus : MonoBehaviour
+public class Powercar_health : MonoBehaviour
 {
 
 }

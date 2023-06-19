@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5e8b09b4142d249bd74ce5da2bef16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 5
+  acceleration: 27
 --- !u!1 &3389609134528599027
 GameObject:
   m_ObjectHideFlags: 0
