@@ -269,6 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clicksRequiredToDestroy: 5
   clicked: 0
+  points: 50
 --- !u!1 &6131165382827091690
 GameObject:
   m_ObjectHideFlags: 0

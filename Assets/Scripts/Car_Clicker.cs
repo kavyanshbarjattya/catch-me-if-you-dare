@@ -1,10 +1,13 @@
 using UnityEngine;
 public class Car_Clicker : MonoBehaviour
-{ 
-    [SerializeField] public int clicksRequiredToDestroy;
+{
+    score_minus SM;
+    [SerializeField] private int clicksRequiredToDestroy;
     [SerializeField] private int clicked;
+    [SerializeField] public int points;
     private void Start()
     {
+        SM = FindAnyObjectByType<score_minus>();
         clicked = 0; 
     }
     private void Update()
@@ -18,8 +21,9 @@ public class Car_Clicker : MonoBehaviour
                 if (hit.collider.CompareTag("Car"))
                 {
                     clicked++;
-                    if (clicked >= clicksRequiredToDestroy)
+                    if (clicked == clicksRequiredToDestroy)
                     {
+                        SM.AddScore(points);
                         Destroy(hit.transform.gameObject);
                     }
                 }
@@ -34,8 +38,9 @@ public class Car_Clicker : MonoBehaviour
                 if (hit.collider.CompareTag("Car"))
                 {
                     clicked++;
-                    if (clicked >= clicksRequiredToDestroy)
+                    if (clicked == clicksRequiredToDestroy)
                     {
+                        SM.AddScore(points);
                         Destroy(hit.transform.gameObject);
                     }
                 }

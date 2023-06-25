@@ -6,9 +6,7 @@ TagManager:
   tags:
   - Land
   - Car
-  - Normal Car
-  - Power Car
-  - Fast Car
+  - Not A Car
   layers:
   - Default
   - TransparentFX

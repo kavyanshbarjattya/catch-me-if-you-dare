@@ -522,3 +522,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clicksRequiredToDestroy: 1
   clicked: 0
+  points: 15
