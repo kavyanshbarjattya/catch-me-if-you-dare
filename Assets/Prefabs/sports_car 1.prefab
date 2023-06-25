@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 7894075376683085891}
   - component: {fileID: 6338206388808894371}
   - component: {fileID: 2630746488228003849}
-  - component: {fileID: 4483893000963754147}
+  - component: {fileID: 9139523128753979527}
+  - component: {fileID: 7042527407422758782}
   m_Layer: 0
   m_Name: sports_car 1
-  m_TagString: Fast Car
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 945801677078433364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 7.5, y: 7.5, z: 7.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7833170963811557088}
@@ -50,8 +51,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.6095276, y: 1.8654056, z: 5.6203375}
-  m_Center: {x: 4.3111496, y: 1.5368412, z: 4.1324744}
+  m_Size: {x: 2.5, y: 2, z: 5.5}
+  m_Center: {x: 0, y: 0.33, z: 0}
 --- !u!54 &2630746488228003849
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -67,8 +68,8 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &4483893000963754147
+  m_CollisionDetection: 2
+--- !u!114 &9139523128753979527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,7 +81,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5e8b09b4142d249bd74ce5da2bef16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 70
+  acceleration: 60
+  rb: {fileID: 0}
+--- !u!114 &7042527407422758782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945801677078433364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2329b2ad87980f4eb214eca4cb5b92c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clicksRequiredToDestroy: 1
+  clicked: 0
 --- !u!1 &3389609134528599027
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3389609134528599027}
   m_LocalRotation: {x: -0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.3353214, y: 1.0738479, z: 6.018793}
+  m_LocalPosition: {x: 1, y: -0.2, z: 1.625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -191,7 +207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3839730378533930674}
   m_LocalRotation: {x: -0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.3353214, y: 1.0738479, z: 2.798792}
+  m_LocalPosition: {x: 1, y: -0.2, z: -1.625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -275,7 +291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8362060968646889508}
   m_LocalRotation: {x: -0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2539883, y: 1.0738479, z: 6.018793}
+  m_LocalPosition: {x: -1, y: -0.2, z: 1.625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -359,7 +375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8457984946337663395}
   m_LocalRotation: {x: -0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.294655, y: 1.2739979, z: 4.409626}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -447,7 +463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8805633180026333441}
   m_LocalRotation: {x: -0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2539883, y: 1.0738479, z: 2.798792}
+  m_LocalPosition: {x: -1, y: -0.2, z: -1.625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
